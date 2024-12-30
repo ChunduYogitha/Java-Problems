@@ -80,6 +80,50 @@ OUTPUT :
               11
               13
               17
-              19
-  
+              19            
+------------------------------------------------------------------------------------------------------------------------------------------------------
+4)Check Twisted prime or not
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        n=-n;
+        int m = n;
+        int rev = 0;
+        while(n>0){
+            int rem = n%10;
+            rev = rev*10+rem;
+            n=n/10;
+        }
+        System.out.println(rev);
+        boolean a = true;
+        for(int i=2; i<m; i++){
+            if(m%i==0){
+                 a = false;
+                break;
+            }
+        }
+        boolean b = true;
+        for(int j=2; j<rev; j++){
+            if(rev%j==0){
+                 b = false;
+                break;
+            }
+        }
+        if(a && b){
+            System.out.println("Twisted prime number");
+        }
+        else{
+            System.out.println("Not a Twisted Prime Number");
+        }
+    }
+}
+
+output
+            -97
+            79
+            Twisted prime number
+            
 ------------------------------------------------------------------------------------------------------------------------------------------------------
