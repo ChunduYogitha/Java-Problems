@@ -3,6 +3,7 @@
 3) Chekc prime numbers between numbers
 4)Check Twisted prime or not
 5)Check Twisted prime or Not Using Call method
+6)print every 4th prime number
             
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -174,4 +175,36 @@ output
             The reverse number :31
             Twisted prime number
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+6)print every 4th prime number
+class Main{
+    public static void main(String[] args){
+        int count =3;
+        for(int i=2; i<=100; i++){ //  2
+            boolean a = true;
+            for(int j=2; j<i; j++){
+                if(i%j==0){
+                    a = false;
+                    
+                }
+            }
+            
+            if(a==true){
+                count++;
+                if(count%4 == 0){
+                System.out.println(i);
+            }
+            }
+        }
+    }
+}
+
+output
+            2
+            11
+            23
+            41
+            59
+            73
+            97
 ------------------------------------------------------------------------------------------------------------------------------------------------------
