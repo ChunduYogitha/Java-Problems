@@ -6,6 +6,7 @@
 6)print every 4th prime number
 7) Nearest Prime number
 8)Print a prime number without using count
+9)Alternative prime numbers Between given Range
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -310,3 +311,56 @@ output
             -6
             Not a Prime MNumber
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+9)Alternative prime numbers Between given Range
+            
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        if(n1<=0 || n2<=0){
+            System.out.println("Invalid Inputs");
+        }
+        else {
+            Prime(n1, n2);
+        }
+    }
+    static void Prime(int n1, int n2){
+        boolean b = true;
+        int count = 1;
+        for(int i=n1; i<=n2; i++){
+            boolean a = true;
+            for(int j=2; j<i; j++){
+                if(i%j==0){
+                    a = false; // 1
+                }
+            }
+            if(a){
+                count ++;
+                if(count%2==0){
+                    if(b){
+                    System.out.print(i);
+                    
+                    b = false; 
+                    }
+                    else {
+                    System.out.print(", "+i);
+                }
+                }
+                
+            }
+        }
+    }
+}
+output
+            input 1 : 25
+                        100
+            output 1 : 29, 37, 43, 53, 61, 71, 79, 89
+
+
+            input 2 : -6
+                        -200
+            output 2 : Invalid Inputs
+      
+------------------------------------------------------------------------------------------------------------------------------------------------------      
