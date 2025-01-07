@@ -4,7 +4,9 @@
 4)Check Twisted prime or not
 5)Check Twisted prime or Not Using Call method
 6)print every 4th prime number
-            
+7) Nearest Prime number
+8)Print a prime number without using count
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 1)Check Prime Number
@@ -207,4 +209,104 @@ output
             59
             73
             97
+------------------------------------------------------------------------------------------------------------------------------------------------------
+7) Nearest Prime number
+            
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n<=0){
+            System.out.println("InValid Input");
+        }
+        else{
+            int a = NearestUpperPrime(n);
+            int b = NearestLowerPrime(n);
+            int c = a-n;
+            int d = n-b;
+            if(c==d){A
+                System.out.println(b);
+                System.out.println(a);
+            }
+            else if(c>d){
+                System.out.println(b);
+            }
+            else {
+                System.out.println(a);
+            }
+                
+        }
+    }
+    static int NearestUpperPrime(int n){
+        int i = n+1;
+        while(true){
+            if(isPrime(i)){
+                return i;
+            }
+            i++;
+        }
+    }
+    static int NearestLowerPrime(int n){
+        int i= n-1;
+        while(i>1){
+            if(isPrime(i)){
+                return i;
+            }
+            i--;
+        }
+        return 2;
+    }
+    static boolean isPrime(int n){
+        if(n <= 1) return false;
+        for(int i=2;i<n/2;i++){
+            if(n%i==0) return false;
+        }
+        return true;
+    }
+}
+output
+             input 1 : 83
+             output 1 : 79
+
+            input 2 : 182
+            output 2 : 181
+
+            input 3 : 228
+            output 3 : 227
+                        229
+------------------------------------------------------------------------------------------------------------------------------------------------------
+8)Print a prime number without using count
+
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n<=0){
+            System.out.println("Invalid Input");
+        }
+        else{
+        boolean a = true;
+        for(int i=2; i<n; i++){
+            if(n%i==0){
+               a = false; 
+            }
+        }
+        if(a){
+            System.out.println("Prime Number");
+        }
+        else {
+            System.out.println("Not a Prime Number");
+        }
+        }
+    }
+}
+
+output
+            83
+            Prime Number
+
+            -6
+            Not a Prime MNumber
 ------------------------------------------------------------------------------------------------------------------------------------------------------
