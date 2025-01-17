@@ -1,5 +1,6 @@
 1)Print the Given number Palindrome or Not
-2)Alternative Palindrome Numbers in Range  
+2)Alternative Palindrome Numbers in Range
+3)Write a program to the given number is palindrome or not print reverse value of a given number  
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1)Print the Given number Palindrome or Not
   
@@ -101,3 +102,44 @@ Output 1 : 101, 121, 141, 161, 181.
  Output 2 : InvAlid InPUts
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3)Write a program to the given number is palindrome or not print reverse value of a given number
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int rev = 0;
+        if(n<0){
+            System.out.println("Invalid Input");
+        }
+        else if(n==0){
+            System.out.println("Zero");
+        }
+        else {
+            palin(n, rev);
+        }
+    }
+    static void palin(int n, int rev){
+        int m = n;
+        while(n>0){
+            int rem = n%10;
+            rev=rev*10+rem;
+            n=n/10;
+        }
+        if(m==rev){
+            System.out.println("Given Number is Palindrome");
+        }
+        else {
+            System.out.println("Reverse of a Given Number is "+rev);
+        }
+    }
+    
+}
+output
+Input 1 : 1698
+Output 1 : Reverse of a Given Number is 8961
+
+Input 2 : 2112
+Output 2 : Given Number is Palindrome 
+ 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
